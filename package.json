@@ -1,0 +1,27 @@
+{
+  "name": "snapdash",
+  "private": true,
+  "releaseCodename": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "scripts": {
+    "start": "",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okize/snapdash"
+  },
+  "author": "Morgan Wigmanich <okize123@gmail.com> (https://github.com/okize)",
+  "homepage": "https://github.com/okize/snapdash",
+  "bugs": "https://github.com/okize/snapdash/issues",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
