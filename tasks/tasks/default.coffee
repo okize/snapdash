@@ -6,5 +6,6 @@ run = require 'run-sequence'
 gulp.task 'default', (callback) ->
   run(
     'start',
+    'watch',
     callback
   )

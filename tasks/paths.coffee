@@ -1,8 +1,12 @@
+path = require 'path'
+
 # asset paths
 
 module.exports =
+  root: path.resolve '.'
+  main: path.resolve 'app.coffee'
   src:
-    sass: 'assets/scss/**/*.scss'
+    sass: 'assets/sass/**/*.scss'
     coffee: 'assets/coffee/**/*.coffee'
     jade: 'views/**/*.jade'
   dist:

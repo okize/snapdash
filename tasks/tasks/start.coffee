@@ -7,13 +7,13 @@ nodemon = require 'gulp-nodemon'
 log = require path.join(__dirname, '..', 'helpers', 'log.coffee')
 
 # configuration
-app = path.join(__dirname, '..', '..', 'app.coffee')
+paths = require '../paths'
 debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729
 
 gulp.task 'start', ->
   nodemon(
-    script: app
+    script: paths.main
     ext: 'coffee'
     env: process.env
     nodeArgs: ['--nodejs', "--debug=#{debugPort}"]
