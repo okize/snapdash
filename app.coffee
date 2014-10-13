@@ -9,7 +9,7 @@ app = express()
 
 # configuration
 app.set 'env', process.env.NODE_ENV or 'development'
-app.set 'port', process.env.PORT or 2222
+app.set 'port', process.env.PORT or 8000
 app.set 'app name', 'Snapdash'
 app.set 'views', path.join(__dirname, 'views')
 app.set 'view engine', 'jade'

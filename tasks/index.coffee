@@ -1,11 +1,9 @@
+#modules
 fs = require 'fs'
 path = require 'path'
-gulp = require 'gulp'
+isScript = require path.join(__dirname, 'helpers', 'isScript.coffee')
 
-tasks = fs.readdirSync path.join(__dirname, 'plugins')
-
-for task in tasks
-  parts = task.split '.'
-  extension = parts[parts.length - 1]
-  if extension is 'js' or extension is 'coffee'
-    require "./plugins/#{task}"
+# load all the gulp task modules
+tasks = fs.readdirSync(path.join(__dirname, 'tasks')).filter(isScript)
+tasks.forEach (task) ->
+  require "./tasks/#{task}"

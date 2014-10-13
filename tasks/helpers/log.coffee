@@ -1,7 +1,7 @@
-gulp = require 'gulp'
+# small wrapper for gulp logging
+
 gutil = require 'gulp-util'
 
-# export log methods
 module.exports =
 
   # info logging
