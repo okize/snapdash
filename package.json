@@ -38,9 +38,11 @@
     "gulp-nodemon": "^1.0.4",
     "gulp-notify": "^2.0.0",
     "gulp-sass": "^1.1.0",
+    "gulp-sourcemaps": "^1.2.4",
     "gulp-util": "^3.0.1",
     "pretty-hrtime": "^0.2.2",
     "run-sequence": "^1.0.1",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.0.0"
   }

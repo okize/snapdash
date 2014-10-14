@@ -2,6 +2,7 @@
 
 gulp = require 'gulp'
 sass = require 'gulp-sass'
+sourcemaps = require 'gulp-sourcemaps'
 
 paths = require '../paths'
 log = require '../helpers/log.coffee'
@@ -9,10 +10,11 @@ log = require '../helpers/log.coffee'
 gulp.task 'sass', ->
   log.info 'Compiling sass into css'
   gulp
-    .src(paths.src.sass)
+    .src paths.src.sass
+    .pipe sourcemaps.init()
     .pipe sass(
       errLogToConsole: true
-      sourceComments: 'map'
     )
-    .pipe(gulp.dest(paths.dist.css))
-    .on('error', log.error)
+    .pipe sourcemaps.write()
+    .pipe gulp.dest paths.dist.css
+    .on 'error', (e) -> log.error e
