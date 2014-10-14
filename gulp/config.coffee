@@ -11,6 +11,7 @@ module.exports =
   # DO NOT restart node app when files change in these directories
   appIgnoreDirs: [
     'node_modules/',
+    'gulp',
     'assets',
     'public/'
   ]
