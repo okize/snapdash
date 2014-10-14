@@ -1,14 +1,14 @@
 path = require 'path'
+root = path.resolve(__dirname, '..')
 
 # asset paths
 
 module.exports =
-  root: path.resolve '.'
-  main: path.resolve 'app.coffee'
+  root: root
+  main: "#{root}/app.coffee"
   src:
-    sass: 'assets/sass/**/*.scss'
-    coffee: 'assets/coffee/**/*.coffee'
-    jade: 'views/**/*.jade'
+    sass: "#{root}/assets/sass/**/*.sass"
+    coffee: "#{root}/assets/coffee/app.coffee"
   dist:
-    css: 'public/stylesheets'
-    js: 'public/javascripts'
+    css: "#{root}/public/stylesheets"
+    js: "#{root}/public/javascripts"

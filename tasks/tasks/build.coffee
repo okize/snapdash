@@ -6,6 +6,6 @@ run = require 'run-sequence'
 gulp.task 'build', (callback) ->
   run(
     'clean',
-    'sass',
+    ['sass', 'browserify']
     callback
   )

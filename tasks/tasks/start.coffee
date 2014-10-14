@@ -4,7 +4,7 @@ path = require 'path'
 dotenv = require('dotenv').load()
 gulp = require 'gulp'
 nodemon = require 'gulp-nodemon'
-log = require path.join(__dirname, '..', 'helpers', 'log.coffee')
+log = require '../helpers/log.coffee'
 
 # configuration
 paths = require '../paths'
@@ -12,6 +12,7 @@ debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729
 
 gulp.task 'start', ->
+  log.info 'Starting Express server'
   nodemon(
     script: paths.main
     ext: 'coffee'
@@ -19,6 +20,7 @@ gulp.task 'start', ->
     nodeArgs: ['--nodejs', "--debug=#{debugPort}"]
     ignore: [
       'node_modules/',
+      'assets',
       'public/'
     ]
   ).on('restart', (files) ->
