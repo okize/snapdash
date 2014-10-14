@@ -1,2 +1,2 @@
 require('coffee-script/register');
-require('./tasks/index.coffee');
+require('./gulp/index.coffee');
