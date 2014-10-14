@@ -1,4 +1,5 @@
-# TASK: starts up LiveReload server and the app with nodemon
+# starts up the application with nodemon
+# and loads environment variables from .env
 
 path = require 'path'
 dotenv = require('dotenv').load()
@@ -12,7 +13,7 @@ debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729
 
 gulp.task 'start', ->
-  log.info 'Starting Express server'
+  log.info 'Starting application server'
   nodemon(
     script: config.main
     ext: 'coffee'

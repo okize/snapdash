@@ -1,6 +1,7 @@
 # modules
 path = require 'path'
 express = require 'express'
+assets = require 'express-asset-versions'
 compression = require 'compression'
 logger = require 'morgan'
 
@@ -18,7 +19,9 @@ app.set 'view engine', 'jade'
 app.use compression(threshold: 1024)
 
 # static assets
-app.use express.static(path.join(__dirname, 'public'), maxAge: 86400000)
+assetPath = path.join(__dirname, 'public')
+app.use express.static(assetPath, maxAge: 86400000)
+app.use assets('', assetPath)
 
 # init router
 router = express.Router()
