@@ -3,6 +3,7 @@
 path = require 'path'
 gulp = require 'gulp'
 coffeelint = require 'gulp-coffeelint'
+jsonlint = require 'gulp-jsonlint'
 csslint = require 'gulp-csslint'
 
 config = require '../config'
@@ -13,9 +14,16 @@ gulp.task 'lint', ->
 
   # coffeescript
   gulp
-    .src(['./*.coffee', '!./node_modules/**'])
+    .src(['./**/*.coffee', '!./node_modules/**'])
     .pipe coffeelint()
     .pipe coffeelint.reporter()
+    .on 'error', (e) -> log.error e
+
+  # json
+  gulp
+    .src(['./**/*.json', '!./node_modules/**'])
+    .pipe jsonlint()
+    .pipe jsonlint.reporter()
     .on 'error', (e) -> log.error e
 
   # css
