@@ -1,5 +1,6 @@
 # compile coffeescript into js
 
+path = require 'path'
 gulp = require 'gulp'
 gutil = require 'gulp-util'
 browserify = require 'browserify'
@@ -14,7 +15,7 @@ log = require '../helpers/log.coffee'
 gulp.task 'browserify', ->
   log.start 'Bundling modules into javascript'
   browserify(
-    entries: [config.src.coffee]
+    entries: [path.join(config.src.coffeeDir, config.src.coffeeEntry)]
     extensions: ['.coffee']
     debug: true
   )

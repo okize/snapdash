@@ -1,9 +1,11 @@
 #modules
 fs = require 'fs'
 path = require 'path'
-isScript = require path.join(__dirname, 'helpers', 'isScript.coffee')
+
+config = require './config'
+isScript = require './helpers/isScript.coffee'
 
 # load all the gulp task modules
-tasks = fs.readdirSync(path.join(__dirname, 'tasks')).filter(isScript)
+tasks = fs.readdirSync(config.taskDir).filter(isScript)
 tasks.forEach (task) ->
-  require "./tasks/#{task}"
+  require "#{config.taskDir}/#{task}"

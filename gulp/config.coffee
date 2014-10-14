@@ -5,10 +5,23 @@ root = path.resolve(__dirname, '..')
 
 module.exports =
   root: root
+  taskDir: "#{root}/gulp/tasks"
   main: "#{root}/app.coffee"
+
+  # DO NOT restart node app when files change in these directories
+  appIgnoreDirs: [
+    'node_modules/',
+    'assets',
+    'public/'
+  ]
+
+  # asset sources
   src:
-    sass: "#{root}/assets/sass/**/*.sass"
-    coffee: "#{root}/assets/coffee/app.coffee"
+    sassDir: "#{root}/assets/sass/"
+    coffeeEntry: "app.coffee"
+    coffeeDir: "#{root}/assets/coffee/"
+
+  # asset compilation targets
   dist:
     cssName: 'styles.css'
     cssDir: "#{root}/public/stylesheets"

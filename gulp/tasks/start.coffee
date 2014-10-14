@@ -19,14 +19,10 @@ gulp.task 'start', ->
     ext: 'coffee'
     env: process.env
     nodeArgs: ['--nodejs', "--debug=#{debugPort}"]
-    ignore: [
-      'node_modules/',
-      'assets',
-      'public/'
-    ]
+    ignore: config.appIgnoreDirs
   ).on('restart', (files) ->
-    log.info 'app restarted'
+    log.info 'Application restarted'
   ).on('quit', ->
-    log.info 'app closed'
+    log.info 'Application closed'
     gutil.beep()
   )

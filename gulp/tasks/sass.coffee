@@ -1,5 +1,6 @@
 # compile sass into css
 
+path = require 'path'
 gulp = require 'gulp'
 sass = require 'gulp-sass'
 sourcemaps = require 'gulp-sourcemaps'
@@ -10,7 +11,7 @@ log = require '../helpers/log.coffee'
 gulp.task 'sass', ->
   log.info 'Compiling sass into css'
   gulp
-    .src config.src.sass
+    .src path.join(config.src.sassDir, '**/*.sass')
     .pipe sourcemaps.init()
     .pipe sass(
       errLogToConsole: true
