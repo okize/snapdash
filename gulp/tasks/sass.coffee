@@ -6,7 +6,7 @@ sass = require 'gulp-sass'
 sourcemaps = require 'gulp-sourcemaps'
 
 config = require '../config'
-log = require '../helpers/log.coffee'
+log = require '../helpers/log'
 
 gulp.task 'sass', ->
   log.info 'Compiling sass into css'

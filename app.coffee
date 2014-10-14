@@ -38,5 +38,4 @@ app.use logger 'dev'
 
 # await connections
 app.listen app.get('port'), ->
-  console.log "#{app.get('app name')} running on port #{app.get('port')} " +
-              "in [#{app.get('env')}]"
+  console.log "#{app.get('app name')} running on port #{app.get('port')} in [#{app.get('env')}]"

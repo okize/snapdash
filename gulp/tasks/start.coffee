@@ -5,9 +5,8 @@ path = require 'path'
 dotenv = require('dotenv').load()
 gulp = require 'gulp'
 nodemon = require 'gulp-nodemon'
-log = require '../helpers/log.coffee'
+log = require '../helpers/log'
 
-# configuration
 config = require '../config'
 debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729

@@ -10,7 +10,7 @@ buffer = require 'vinyl-buffer'
 sourcemaps = require 'gulp-sourcemaps'
 
 config = require '../config'
-log = require '../helpers/log.coffee'
+log = require '../helpers/log'
 
 gulp.task 'browserify', ->
   log.start 'Bundling modules into javascript'
@@ -26,5 +26,5 @@ gulp.task 'browserify', ->
   .pipe sourcemaps.init(loadMaps: true)
   .pipe sourcemaps.write()
   .pipe gulp.dest config.dist.jsDir
-  .on 'error', (e) -> log.error e
   .on 'end', () -> log.end 'bundling'
+  .on 'error', (e) -> log.error e

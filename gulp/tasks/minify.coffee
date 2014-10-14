@@ -7,7 +7,7 @@ uglify = require 'gulp-uglify'
 minifycss = require 'gulp-minify-css'
 
 config = require '../config'
-log = require '../helpers/log.coffee'
+log = require '../helpers/log'
 
 gulp.task 'minify', ->
   log.info 'Minifying javascript'

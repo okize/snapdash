@@ -3,7 +3,7 @@
 gulp = require 'gulp'
 clean = require 'del'
 config = require '../config'
-log = require '../helpers/log.coffee'
+log = require '../helpers/log'
 
 gulp.task 'clean', ->
   log.info 'Deleting public assets'
