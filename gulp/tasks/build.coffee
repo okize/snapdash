@@ -3,10 +3,13 @@
 gulp = require 'gulp'
 run = require 'run-sequence'
 
-gulp.task 'build', (callback) ->
+log = require '../helpers/log'
+
+gulp.task 'build', (done) ->
+  log.info 'Building static assets'
   run(
     'clean'
     ['sass', 'browserify']
     'minify'
-    callback
+    done
   )

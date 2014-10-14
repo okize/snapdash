@@ -22,4 +22,5 @@ module.exports =
   # displays task time since timer started
   end: (task) ->
     taskTime = prettyHrtime process.hrtime(startTime)
-    gutil.log 'Finished', gutil.colors.cyan(task), 'after', gutil.colors.magenta(taskTime)
+    gutil.log 'Finished', gutil.colors.cyan(task),
+              'after', gutil.colors.magenta(taskTime)
