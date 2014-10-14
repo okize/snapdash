@@ -7,14 +7,14 @@ nodemon = require 'gulp-nodemon'
 log = require '../helpers/log.coffee'
 
 # configuration
-paths = require '../paths'
+config = require '../config'
 debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729
 
 gulp.task 'start', ->
   log.info 'Starting Express server'
   nodemon(
-    script: paths.main
+    script: config.main
     ext: 'coffee'
     env: process.env
     nodeArgs: ['--nodejs', "--debug=#{debugPort}"]

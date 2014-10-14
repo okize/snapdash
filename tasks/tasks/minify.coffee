@@ -2,12 +2,11 @@
 
 path = require 'path'
 gulp = require 'gulp'
-paths = require '../paths'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 minifycss = require 'gulp-minify-css'
 
-paths = require '../paths'
+config = require '../config'
 log = require '../helpers/log.coffee'
 
 gulp.task 'minify', ->
@@ -15,16 +14,16 @@ gulp.task 'minify', ->
 
   # js
   gulp
-    .src path.join(paths.dist.jsDir, paths.dist.jsName)
+    .src path.join(config.dist.jsDir, config.dist.jsName)
     .pipe uglify()
     .pipe rename(suffix: '.min')
-    .pipe gulp.dest paths.dist.jsDir
+    .pipe gulp.dest config.dist.jsDir
     .on 'error', (e) -> log.error e
 
   # css
   gulp
-    .src path.join(paths.dist.cssDir, paths.dist.cssName)
+    .src path.join(config.dist.cssDir, config.dist.cssName)
     .pipe minifycss()
     .pipe rename(suffix: '.min')
-    .pipe gulp.dest paths.dist.cssDir
+    .pipe gulp.dest config.dist.cssDir
     .on 'error', (e) -> log.error e

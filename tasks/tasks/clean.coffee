@@ -2,9 +2,9 @@
 
 gulp = require 'gulp'
 clean = require 'del'
-paths = require '../paths'
+config = require '../config'
 log = require '../helpers/log.coffee'
 
 gulp.task 'clean', ->
   log.info 'Deleting public assets'
-  clean [paths.dist.cssDir, paths.dist.jsDir]
+  clean [config.dist.cssDir, config.dist.jsDir]
