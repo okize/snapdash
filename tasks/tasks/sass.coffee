@@ -16,5 +16,5 @@ gulp.task 'sass', ->
       errLogToConsole: true
     )
     .pipe sourcemaps.write()
-    .pipe gulp.dest paths.dist.css
+    .pipe gulp.dest paths.dist.cssDir
     .on 'error', (e) -> log.error e

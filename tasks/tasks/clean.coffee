@@ -7,4 +7,4 @@ log = require '../helpers/log.coffee'
 
 gulp.task 'clean', ->
   log.info 'Deleting public assets'
-  clean [paths.dist.css, paths.dist.js]
+  clean [paths.dist.cssDir, paths.dist.jsDir]

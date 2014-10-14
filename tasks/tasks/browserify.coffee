@@ -20,10 +20,10 @@ gulp.task 'browserify', ->
   )
   .transform coffeeify
   .bundle()
-  .pipe source 'scripts.js'
+  .pipe source paths.dist.jsName
   .pipe buffer()
   .pipe sourcemaps.init(loadMaps: true)
   .pipe sourcemaps.write()
-  .pipe gulp.dest paths.dist.js
+  .pipe gulp.dest paths.dist.jsDir
   .on 'error', (e) -> log.error e
   .on 'end', () -> log.end 'bundling'
