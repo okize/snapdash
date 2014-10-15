@@ -4,11 +4,11 @@
 dotenv = require('dotenv').load()
 
 config = require './config'
-log = require './helpers/log'
+# log = require './helpers/log'
 tasks = require('./helpers/getTaskList')()
 
 # load all the gulp task modules
-log.start 'bootstrapping Gulp tasks'
+# log.start 'bootstrapping Gulp tasks'
 tasks.forEach (task) ->
   require "#{config.taskDir}/#{task}"
-log.end 'bootsrap'
+# log.end 'bootsrap'

@@ -33,6 +33,6 @@ gulp.task 'lint-json', () ->
 gulp.task 'lint-css', () ->
   gulp
     .src path.join(config.dist.cssDir, config.dist.cssName)
-    .pipe csslint()
+    .pipe csslint 'csslintrc.json'
     .pipe csslint.reporter()
     .on 'error', (e) -> log.error e
