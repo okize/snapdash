@@ -1,7 +1,8 @@
-# watches source files and triggers a page refresh on change
+# watches asset files and triggers an asset recompile when changes are made
 
 path = require 'path'
 gulp = require 'gulp'
+watch = require 'gulp-watch'
 
 config = require '../config'
 log = require '../helpers/log'
@@ -9,5 +10,10 @@ log = require '../helpers/log'
 gulp.task 'watch', ['sync'], ->
   log.info 'Watching assets for changes...'
 
-  gulp.watch path.join(config.src.sassDir, '**/*.sass'), ['sass']
-  gulp.watch path.join(config.src.coffeeDir, '**/*.coffee'), ['browserify']
+  watch(path.join(config.src.sassDir, '**/*.{sass,scss}'), (files, cb) ->
+    gulp.start 'sass', cb
+  )
+
+  watch(path.join(config.src.coffeeDir, '**/*.{coffee,js}'), (files, cb) ->
+    gulp.start 'browserify', cb
+  )
