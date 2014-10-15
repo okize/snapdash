@@ -1,11 +1,14 @@
-# modules
-fs = require 'fs'
+# this file boostraps all the gulp tasks
+
+# load env vars here so they'll be available to all gulp tasks
 dotenv = require('dotenv').load()
 
 config = require './config'
-isScript = require './helpers/isScript.coffee'
+log = require './helpers/log'
+tasks = require('./helpers/getTaskList')()
 
 # load all the gulp task modules
-tasks = fs.readdirSync(config.taskDir).filter(isScript)
+log.start 'bootstrapping Gulp tasks'
 tasks.forEach (task) ->
   require "#{config.taskDir}/#{task}"
+log.end 'bootsrap'
