@@ -2,6 +2,7 @@
 
 path = require 'path'
 gulp = require 'gulp'
+gutil = require 'gulp-util'
 pg = require 'pg'
 
 config = require '../config'
@@ -13,6 +14,7 @@ gulp.task 'dbtest', (done) ->
   log.info 'Checking database connection'
   pg.connect process.env.DATABASE_URL, (error, client, close) ->
     if error
+      gutil.beep()
       if error.code is 'ECONNREFUSED'
         log.error 'Unable to connect to the database'
       else

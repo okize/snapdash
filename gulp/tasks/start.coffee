@@ -22,5 +22,4 @@ gulp.task 'start', ->
     sync.reload(stream:false)
   ).on('quit', ->
     log.info 'Application closed'
-    gutil.beep()
   )
