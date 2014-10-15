@@ -5,8 +5,9 @@ path = require 'path'
 dotenv = require('dotenv').load()
 gulp = require 'gulp'
 nodemon = require 'gulp-nodemon'
-log = require '../helpers/log'
+sync = require 'browser-sync'
 
+log = require '../helpers/log'
 config = require '../config'
 debugPort = process.env.DEBUG_PORT or 5858
 liveReloadPort = process.env.LIVE_RELOAD_PORT or 35729
@@ -21,6 +22,7 @@ gulp.task 'start', ->
     ignore: config.appIgnoreDirs
   ).on('restart', (files) ->
     log.info 'Application restarted'
+    sync.reload(stream:false)
   ).on('quit', ->
     log.info 'Application closed'
     gutil.beep()

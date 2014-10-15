@@ -2,11 +2,13 @@
 
 path = require 'path'
 root = path.resolve(__dirname, '..')
+assets = path.resolve(root, 'public')
 
 module.exports =
   root: root
   taskDir: "#{root}/gulp/tasks"
   main: "#{root}/app.coffee"
+  publicAssetsDir: assets
 
   # DO NOT restart node app when files change in these directories
   appIgnoreDirs: [
@@ -25,6 +27,6 @@ module.exports =
   # asset compilation targets
   dist:
     cssName: 'styles.css'
-    cssDir: "#{root}/public/stylesheets"
+    cssDir: "#{assets}/stylesheets"
     jsName: 'scripts.js'
-    jsDir: "#{root}/public/javascripts"
+    jsDir: "#{assets}/javascripts"

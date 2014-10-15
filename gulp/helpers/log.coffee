@@ -11,8 +11,14 @@ module.exports =
     gutil.log gutil.colors.blue(msg)
 
   # error logging
-  error: (msg) ->
-    gutil.log gutil.colors.red(msg)
+  error: (err) ->
+    if err.name and err.stack
+      err = gutil.colors.red("#{err.plugin}: #{err.name}: ") +
+            gutil.colors.bold.red("#{err.message}") +
+            "\n#{err.stack}"
+    else
+      err = gutil.colors.red err
+    gutil.log err
 
   # start logging with timer
   start: (msg) ->
