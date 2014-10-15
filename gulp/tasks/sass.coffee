@@ -11,7 +11,7 @@ log = require '../helpers/log'
 gulp.task 'sass', ->
   log.info 'Compiling sass into css'
   gulp
-    .src path.join(config.src.sassDir, '**/*.sass')
+    .src path.join(config.src.sassDir, '**/*.{sass,scss}')
     .pipe sourcemaps.init()
     .pipe sass(
       errLogToConsole: true
