@@ -13,7 +13,7 @@ gulp.task 'open', ->
   if (process.env.NODE_ENV == 'development')
     port = process.env.BROWSER_SYNC_PORT
   else
-    port = process.env.EXPRESS_PORT
+    port = process.env.PORT
   options =
     url: "http://localhost:#{port}"
     # app: 'firefox'

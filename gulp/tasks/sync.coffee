@@ -10,7 +10,7 @@ log = require '../helpers/log'
 gulp.task 'sync', ->
   log.info 'Starting browser-sync proxy'
   sync
-    proxy: "localhost:#{process.env.EXPRESS_PORT}"
+    proxy: "localhost:#{process.env.PORT}"
     port: process.env.BROWSER_SYNC_PORT
     open: false
     files: ["#{config.publicAssetsDir}/**/*.{js,css}", './views/**/*.jade']
