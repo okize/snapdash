@@ -3,6 +3,7 @@
 gulp = require 'gulp'
 
 gulp.task 'default', [
+  'dbtest'
   'start'
   'watch'
 ]

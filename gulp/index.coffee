@@ -1,6 +1,6 @@
-#modules
+# modules
 fs = require 'fs'
-path = require 'path'
+dotenv = require('dotenv').load()
 
 config = require './config'
 isScript = require './helpers/isScript.coffee'
