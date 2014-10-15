@@ -21,6 +21,7 @@
   "bugs": "https://github.com/okize/snapdash/issues",
   "license": "MIT",
   "dependencies": {
+    "basic-auth": "^1.0.0",
     "coffee-script": "^1.8.0",
     "compression": "^1.1.1",
     "express": "^4.9.7",

@@ -4,6 +4,7 @@ express = require 'express'
 assets = require 'express-asset-versions'
 compression = require 'compression'
 logger = require 'morgan'
+basicAuthentication = require './lib/authentication'
 
 # create application instance
 app = express()
@@ -23,15 +24,13 @@ assetPath = path.join(__dirname, 'public')
 app.use express.static(assetPath, maxAge: 86400000)
 app.use assets('', assetPath)
 
-# init router
-router = express.Router()
+# authenticate when in production and if auth env vars have been set
+if process.env.NODE_ENV is 'production' and process.env.REMOTE_USER? and process.env.REMOTE_PASS?
+  app.all '*', basicAuthentication
 
-# Initial dummy route for testing
-router.get '/', (req, res) ->
+# index
+app.get '/', (req, res) ->
   res.render 'index.jade'
-
-# register routes
-app.use router
 
 # logger
 app.use logger 'dev'
