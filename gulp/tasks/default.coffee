@@ -1,11 +1,9 @@
-# runs local server with livereload
+# starts application server and monitors files for changes
 
 gulp = require 'gulp'
-run = require 'run-sequence'
 
-gulp.task 'default', (callback) ->
-  run(
-    'start',
-    'watch',
-    callback
-  )
+gulp.task 'default', [
+  'dbtest'
+  'start'
+  'watch'
+]

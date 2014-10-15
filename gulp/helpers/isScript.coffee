@@ -1,4 +1,5 @@
-# allow only .coffee and .js files to prevent accidental inclusion of other file types
+# allow only .coffee and .js files to prevent
+# accidental inclusion of other file types
 
 path = require 'path'
 
