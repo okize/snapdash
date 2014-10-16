@@ -2,8 +2,8 @@ path = require 'path'
 express = require 'express'
 assets = require 'express-asset-versions'
 compression = require 'compression'
-logger = require 'morgan'
 favicon = require 'serve-favicon'
+logger = require '../lib//logger'
 
 exports.before = (app) ->
 
@@ -16,7 +16,10 @@ exports.before = (app) ->
   app.use favicon path.join(assetPath, 'favicons', 'favicon.ico')
   app.use assets('', assetPath)
 
+  # http logger
+  app.use logger.http
+
 exports.after = (app, db) ->
 
-  # logger
-  app.use logger 'dev'
+  # error logger
+  app.use logger.error
