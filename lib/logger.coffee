@@ -5,13 +5,14 @@ logger = new winston.Logger(transports: [
   new winston.transports.Console(
     json: false
     colorize: true
+    handleExceptions: true
   )
 ])
 
 module.exports.http = expressWinston.logger(
   winstonInstance: logger
   meta: false
-  msg: 'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms'
+  msg: "HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms"
   expressFormat: false
   colorStatus: true
 )
