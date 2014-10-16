@@ -3,7 +3,7 @@ express = require 'express'
 assets = require 'express-asset-versions'
 compression = require 'compression'
 favicon = require 'serve-favicon'
-logger = require '../lib//logger'
+logger = require '../lib/logger'
 
 exports.before = (app) ->
 
