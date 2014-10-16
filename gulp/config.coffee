@@ -20,8 +20,10 @@ module.exports =
 
   # asset sources
   src:
+    favicons: "#{root}/assets/favicons/"
+    sassEntry: 'main.sass'
     sassDir: "#{root}/assets/sass/"
-    coffeeEntry: "app.coffee"
+    coffeeEntry: 'app.coffee'
     coffeeDir: "#{root}/assets/coffee/"
 
   # asset compilation targets

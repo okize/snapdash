@@ -9,7 +9,7 @@ gulp.task 'build', (done) ->
   log.info 'Building static assets'
   run(
     'clean'
-    ['sass', 'browserify']
+    ['sass', 'browserify', 'images']
     'minify'
     done
   )

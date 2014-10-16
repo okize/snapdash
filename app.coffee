@@ -5,6 +5,7 @@ assets = require 'express-asset-versions'
 compression = require 'compression'
 logger = require 'morgan'
 basicAuthentication = require './lib/authentication'
+favicon = require 'serve-favicon'
 
 # create application instance
 app = express()
@@ -22,6 +23,7 @@ app.use compression(threshold: 1024)
 # static assets
 assetPath = path.join(__dirname, 'public')
 app.use express.static(assetPath, maxAge: 86400000)
+app.use favicon path.join(assetPath, 'favicons', 'favicon.ico')
 app.use assets('', assetPath)
 
 # authenticate when in production and if auth env vars have been set

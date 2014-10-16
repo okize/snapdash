@@ -12,7 +12,7 @@ log = require '../helpers/log'
 gulp.task 'sass', ->
   log.info 'Compiling sass into css'
   gulp
-    .src path.join(config.src.sassDir, 'main.sass')
+    .src path.join(config.src.sassDir, config.src.sassEntry)
     .pipe sourcemaps.init()
     .pipe sass(
       onError: (e) -> log.error e
