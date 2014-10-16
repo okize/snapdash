@@ -44,6 +44,7 @@
     "gulp-coffeelint": "^0.4.0",
     "gulp-csslint": "^0.1.5",
     "gulp-jsonlint": "^0.1.0",
+    "gulp-lintspaces": "^0.2.2",
     "gulp-minify-css": "^0.3.10",
     "gulp-nodemon": "^1.0.4",
     "gulp-notify": "^2.0.0",
